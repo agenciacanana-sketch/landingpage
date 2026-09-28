@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0e5f6b">
+<title>Club de Membresías: fideliza a los clientes de tu barbería o salón</title>
+<meta name="description" content="Membresía mensual de barrio para barberías y salones: carné digital, descuentos que se calculan solos, familia y amigos, y avisos de WhatsApp para no perder clientes.">
+<style>
+:root{--ink:#10222b;--soft:#4d5f69;--teal:#0e5f6b;--teal-d:#0a4750;--amber:#e39b2d;--paper:#fbfaf6;--white:#fff;--line:#d9e2e2;--green:#1f9d55;--yellow:#d9a400;--orange:#e0701f;--red:#d13b3b;--wa:#1fa855;--r:14px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{margin:0;font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--paper)}
+h1,h2,h3{line-height:1.12;letter-spacing:-.02em;margin:0 0 .5em}
+h1{font-size:clamp(2.1rem,6vw,3.6rem);font-weight:850}
+h2{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800}
+h3{font-size:1.15rem;font-weight:750}
+p{margin:0 0 1em}
+a{color:var(--teal)}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+section{padding:72px 0}
+.lead{font-size:1.15rem;color:var(--soft);max-width:60ch}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:12px 24px;border-radius:12px;font-weight:750;text-decoration:none;border:2px solid transparent;cursor:pointer;font-size:1rem;transition:transform .15s,background .15s}
+.btn:active{transform:scale(.97)}
+.btn-main{background:var(--amber);color:var(--ink)}.btn-main:hover{background:#f0ac42}
+.btn-alt{border-color:currentColor;color:inherit;background:transparent}
+header.nav{position:sticky;top:0;z-index:10;background:var(--teal-d);color:#fff;padding-top:env(safe-area-inset-top)}
+.nav .wrap{display:flex;align-items:center;gap:16px;min-height:56px}
+.nav strong{flex:1;font-size:1.05rem}
+.nav a{color:#fff;text-decoration:none;font-weight:600;font-size:.95rem;padding:8px 6px}
+.nav .links{display:flex;gap:10px}
+@media(max-width:760px){.nav .links a:not(.btn){display:none}}
+.nav .btn{min-height:40px;padding:6px 16px;font-size:.92rem}
+/* hero */
+.hero{background:var(--teal);color:#fff;padding:56px 0 72px}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+@media(max-width:860px){.hero .wrap{grid-template-columns:1fr}}
+.hero .lead{color:#d6ecef}
+.cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.phone{background:var(--paper);color:var(--ink);border-radius:30px;border:8px solid var(--ink);max-width:340px;margin:0 auto;width:100%;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.phone-bar{background:var(--teal);color:#fff;padding:12px 16px;display:flex;justify-content:space-between;align-items:center;font-weight:750}
+.chip{background:var(--amber);color:var(--ink);font-size:.7rem;font-weight:800;padding:2px 8px;border-radius:99px}
+.phone-body{padding:16px}
+.phone label{display:block;font-size:.85rem;font-weight:700;margin:10px 0 4px;color:var(--soft)}
+.phone select{width:100%;min-height:46px;border:1.5px solid var(--line);border-radius:10px;padding:0 10px;font:inherit;background:#fff;color:var(--ink)}
+.chk{display:flex;gap:10px;align-items:center;margin-top:12px;font-weight:600;font-size:.95rem;min-height:44px}
+.chk input{width:22px;height:22px;accent-color:var(--teal)}
+.cobrar{margin-top:14px;background:var(--white);border:2px solid var(--teal);border-radius:12px;padding:14px;text-align:center}
+.cobrar small{display:block;color:var(--soft);font-size:.85rem}
+.cobrar .monto{font-size:2.2rem;font-weight:850;color:var(--teal);line-height:1.1}
+.cobrar .ahorro{font-weight:700;color:var(--green);min-height:1.5em}
+.nota{font-size:.82rem;color:var(--soft);margin-top:10px}
+.hero .nota{color:#b8dade}
+/* problema */
+.dark{background:var(--ink);color:#fff}
+.dark .lead{color:#c5d3d9}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));margin-top:28px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.dark .card{background:#1a3340;border-color:#2b4756}
+.dark .card p{color:#c5d3d9;margin:0}
+/* pasos */
+.steps{counter-reset:s;list-style:none;padding:0;margin:28px 0 0;display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.steps li{counter-increment:s;background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:22px 22px 22px 70px;position:relative}
+.steps li::before{content:counter(s);position:absolute;left:20px;top:20px;width:36px;height:36px;border-radius:50%;background:var(--teal);color:#fff;font-weight:800;display:grid;place-items:center}
+.steps p{margin:0;color:var(--soft)}
+/* segmentos */
+.seg{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));margin-top:28px}
+.seg div{border-radius:var(--r);padding:16px 18px;color:#fff;font-weight:600}
+.seg b{display:block;font-size:1.1rem}
+.seg span{font-size:.92rem;font-weight:500;opacity:.95}
+.s1{background:var(--green)}.s2{background:var(--yellow);color:var(--ink)!important}.s3{background:var(--orange)}.s4{background:var(--red)}
+.two{display:grid;gap:36px;grid-template-columns:1fr 1fr;align-items:start}
+@media(max-width:860px){.two{grid-template-columns:1fr}}
+.wa{background:#dcf8c6;border-radius:14px 14px 14px 4px;padding:14px 16px;color:#1b2b1b;max-width:420px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.wa small{display:block;color:#4a6a4a;margin-top:8px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.tabs button{min-height:44px;border:1.5px solid var(--teal);background:#fff;color:var(--teal);border-radius:99px;padding:0 16px;font:inherit;font-weight:700;cursor:pointer}
+.tabs button[aria-pressed=true]{background:var(--teal);color:#fff}
+/* niveles */
+.niv{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:22px}
+@media(max-width:560px){.niv{grid-template-columns:repeat(2,1fr)}}
+.niv div{background:var(--white);border:1px solid var(--line);border-radius:var(--r);text-align:center;padding:16px 8px}
+.niv .i{font-size:1.8rem}
+.list{padding-left:1.1em;margin:0}.list li{margin-bottom:.5em}
+.meta{background:var(--teal);color:#fff;border-radius:var(--r);padding:26px;text-align:center}
+.meta b{font-size:3.4rem;display:block;line-height:1}
+details{background:var(--white);border:1px solid var(--line);border-radius:12px;margin-bottom:10px}
+summary{cursor:pointer;padding:16px 18px;font-weight:700;min-height:48px}
+details p{padding:0 18px;color:var(--soft)}
+.final{background:var(--teal);color:#fff;text-align:center}
+.final .lead{margin:0 auto 24px;color:#d6ecef}
+.final .cta-row{justify-content:center}
+footer{padding:24px 0;text-align:center;font-size:.85rem;color:var(--soft)}
+#contacto[hidden]{display:none}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <strong>💈 Club de Membresías</strong>
+    <nav class="links" aria-label="Secciones">
+      <a href="#problema">El problema</a><a href="#como">Cómo funciona</a><a href="#funciones">Funciones</a><a href="#preguntas">Preguntas</a>
+      <a class="btn btn-main" href="#demo-real">Probar la demo</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Que tus clientes fijos sigan siendo fijos.</h1>
+      <p class="lead">Una membresía mensual de barrio, desde el celular. Tus clientes pagan poco y reciben descuentos reales, ellos comparten el beneficio con la familia y los amigos, y tú dejas de depender de la memoria, el cuaderno o el Excel.</p>
+      <div class="cta-row">
+        <a class="btn btn-main" href="#como">Ver cómo funciona</a>
+        <a class="btn btn-alt" href="#demo-real">Probar la app de demostración</a>
+      </div>
+      <p class="nota">Esta pantalla del celular es una simulación: mueve las opciones y mira cuánto se cobra.</p>
+    </div>
+
+    <div class="phone" role="group" aria-labelledby="ph-t">
+      <div class="phone-bar"><span id="ph-t">✂️ Registrar visita</span><span class="chip">DEMO</span></div>
+      <div class="phone-body">
+        <label for="srv">Servicio</label>
+        <select id="srv"></select>
+        <label for="pln">Membresía del cliente</label>
+        <select id="pln"></select>
+        <label class="chk"><input type="checkbox" id="ben"> Lo trae un familiar o amigo del titular</label>
+        <div class="cobrar" aria-live="polite">
+          <small>La app te dice cuánto cobrar</small>
+          <div class="monto" id="monto">$0</div>
+          <div class="ahorro" id="ahorro"></div>
+          <small id="lista"></small>
+        </div>
+        <p class="nota">Precios y descuentos de ejemplo de la demo. Cada negocio pone los suyos en su hoja de Google Sheets.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMA -->
+<section id="problema" class="dark">
+  <div class="wrap">
+    <h2>Hoy el negocio de barrio se maneja en desorden</h2>
+    <p class="lead">En Santa Marta hay hasta 10 barberías y salones por barrio. Con tanta competencia, cada cliente que no vuelve duele.</p>
+    <div class="grid">
+      <div class="card"><h3>Citas por todos lados</h3><p>WhatsApp y llamadas sin orden: unos días llenos, otros vacíos, y sin claridad de cómo aprovecharlos.</p></div>
+      <div class="card"><h3>Nadie le hace seguimiento al cliente</h3><p>Si alguien deja de venir, casi nunca te enteras a tiempo. Se va en silencio donde la competencia.</p></div>
+      <div class="card"><h3>Bajar el precio no es salida</h3><p>Competir con precios más bajos (el corte de barrio ronda los $15.000–$25.000) se come tu margen de ganancia.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section id="como">
+  <div class="wrap">
+    <h2>Así funciona, en tres pasos</h2>
+    <p class="lead">Todo se hace desde el celular del dueño, sin computador ni cosas complicadas.</p>
+    <ol class="steps">
+      <li><h3>Vendes la membresía</h3><p>Nuevo cliente: nombre, celular y plan. Le mandas por WhatsApp su código de 4 números para que vea sus puntos.</p></li>
+      <li><h3>Registras cada visita</h3><p>Buscas al cliente, tocas el servicio y la app calcula el descuento. Si ganó un premio, te avisa para contarle por WhatsApp.</p></li>
+      <li><h3>Revisas los avisos cada mañana</h3><p>Quién hace rato no viene, quién cumple años, qué membresías vencen. Tocas Enviar y WhatsApp abre con el mensaje ya escrito.</p></li>
+    </ol>
+  </div>
+</section>
+
+<!-- FUNCIONES -->
+<section id="funciones" style="background:var(--white)">
+  <div class="wrap">
+    <h2>Lo que trae la app</h2>
+
+    <div class="two" style="margin-top:28px">
+      <div>
+        <h3>Sabes quién se está yendo</h3>
+        <p>Cada cliente aparece con un color según los días desde su última visita. Los límites vienen así de fábrica y se pueden cambiar.</p>
+        <div class="wa" aria-label="Ejemplo de mensaje de WhatsApp">
+          ¡Ana, te extrañamos en Barbería El Rodadero! 💈 Hace 40 días no te vemos. Si vienes esta semana tienes 25% por volver. ¿Qué día te queda bien?
+          <small>Ejemplo del mensaje para clientes en riesgo. Tú tocas Enviar desde tu propio WhatsApp.</small>
+        </div>
+      </div>
+      <div class="seg" style="margin-top:0;grid-template-columns:1fr 1fr">
+        <div class="s1"><b>Al día</b><span>Menos de 21 días</span></div>
+        <div class="s2"><b>Recordar</b><span>21 a 34 días</span></div>
+        <div class="s3"><b>En riesgo</b><span>35 a 59 días</span></div>
+        <div class="s4"><b>Perdido</b><span>60 días o más</span></div>
+      </div>
+    </div>
+
+    <div class="two" style="margin-top:56px">
+      <div>
+        <h3>Premios y niveles que dan ganas de volver</h3>
+        <p>Cada visita suma puntos y el cliente sube de nivel según cuántas veces viene.</p>
+        <ul class="list">
+          <li>Premio cada 5 y cada 10 visitas, regalo de cumpleaños, y descuento por volver.</li>
+          <li>Puntos que se canjean por servicios.</li>
+          <li>Bono para quien invita a un amigo que se registra.</li>
+        </ul>
+        <p class="nota">Premios de ejemplo de la demo. Se editan en la hoja Recompensas.</p>
+      </div>
+      <div class="niv" role="list">
+        <div role="listitem"><div class="i">🥉</div><b>Bronce</b><br><small>desde la 1.ª visita</small></div>
+        <div role="listitem"><div class="i">🥈</div><b>Plata</b><br><small>6 visitas</small></div>
+        <div role="listitem"><div class="i">🥇</div><b>Oro</b><br><small>15 visitas</small></div>
+        <div role="listitem"><div class="i">💎</div><b>Diamante</b><br><small>30 visitas</small></div>
+      </div>
+    </div>
+
+    <div class="two" style="margin-top:56px">
+      <div>
+        <h3>La membresía se comparte con la familia y los amigos</h3>
+        <p>El titular agrega a sus familiares o amigos y ellos también tienen descuento. Cada plan define cuántos pueden usarla y cuántas veces al mes. El titular es quien gana los puntos.</p>
+        <p>Los premios marcados como "Regalar" se pueden pasar a otra persona: le llega un código por WhatsApp.</p>
+      </div>
+      <div>
+        <h3>El cliente ve todo en "Mi membresía"</h3>
+        <p>Con su celular y el código de 4 números entra a una página propia: carné digital con nivel, puntos, vencimiento y premios, y cuánto le falta para el siguiente. Puede apartar turno por WhatsApp si el negocio configuró su número.</p>
+      </div>
+    </div>
+
+    <div class="two" style="margin-top:56px;align-items:center">
+      <div>
+        <h3>Tu meta a la vista</h3>
+        <p>El inicio muestra cuántos miembros activos tienes frente a tu meta. La meta de la demo es de 40 miembros activos y la cambias en tu hoja de Config.</p>
+        <p>Los precios, planes, servicios, premios y el PIN se cambian en Google Sheets, sin tocar código.</p>
+      </div>
+      <div class="meta"><b>40</b>miembros activos, la meta que trae la demo</div>
+    </div>
+  </div>
+</section>
+
+<!-- PLANES -->
+<section id="planes">
+  <div class="wrap">
+    <h2>Planes de ejemplo</h2>
+    <p class="lead">Tres planes vienen cargados en la demo para que veas cómo se arma. Cada negocio define los suyos.</p>
+    <div class="tabs" role="group" aria-label="Elegir plan"></div>
+    <div class="card" id="plan-det" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- DEMO REAL -->
+<section id="demo-real" class="dark">
+  <div class="wrap">
+    <h2>Pruébala tú mismo en el celular</h2>
+    <p class="lead">La app de demostración funciona con datos de ejemplo, sin configurar nada. Entra con el PIN <strong>1234</strong>.</p>
+    <div class="cta-row">
+      <a class="btn btn-main" href="https://agenciacanana-sketch.github.io/MVP1/" target="_blank" rel="noopener">Abrir la app del dueño</a>
+      <a class="btn btn-alt" href="https://agenciacanana-sketch.github.io/MVP1/miembro.html" target="_blank" rel="noopener">Ver la página del cliente</a>
+    </div>
+    <p class="nota" style="color:#9fb3bb">Se puede instalar como app: en Chrome, menú ⋮ y "Agregar a pantalla principal". Para probar "Mi membresía", entra a un miembro desde la app del dueño y usa su celular y su código.</p>
+  </div>
+</section>
+
+<!-- PREGUNTAS -->
+<section id="preguntas">
+  <div class="wrap" style="max-width:760px">
+    <h2>Preguntas frecuentes</h2>
+    <details><summary>¿Necesito un computador?</summary><p>No. La app está pensada para el celular y se instala desde el navegador, sin tienda de aplicaciones.</p></details>
+    <details><summary>¿Dónde quedan los datos de mis clientes?</summary><p>En un Google Sheets que es tuyo. Los datos no dependen del celular: los ves desde cualquier dispositivo con tu enlace y tu PIN.</p></details>
+    <details><summary>¿Los mensajes de WhatsApp salen solos?</summary><p>No. La app deja el mensaje escrito y abre WhatsApp; tú tocas Enviar. Lo que sí es automático son los avisos del día, y si pones tu correo puedes recibir cada mañana la lista de clientes a contactar.</p></details>
+    <details><summary>¿Puedo cambiar precios y beneficios?</summary><p>Sí, en tus hojas de Google Sheets (Config, Planes, Servicios y Recompensas). No hay que tocar código.</p></details>
+    <details><summary>¿Puedo usarla con varios profesionales?</summary><p>Sí. En la configuración pones quién atiende y aparece como botones al registrar cada visita.</p></details>
+    <details><summary>¿Qué necesita cada negocio para empezar?</summary><p>Su propio archivo de Google Sheets, una cuenta de Google y su propio enlace de Apps Script. Cada negocio queda independiente de los demás.</p></details>
+  </div>
+</section>
+
+<!-- CIERRE -->
+<section class="final">
+  <div class="wrap">
+    <h2>Un lugar que conoce a su cliente y lo premia por quedarse</h2>
+    <p class="lead">Ordena a tus clientes fijos, recuérdales que los estás esperando y ofréceles algo mejor que un precio más bajo.</p>
+    <div class="cta-row">
+      <a class="btn btn-main" href="#demo-real">Probar la demo</a>
+      <a class="btn btn-alt" id="btn-contacto" href="#contacto" hidden>Pedir una demostración</a>
+    </div>
+    <div id="contacto" hidden style="margin-top:28px"></div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap">Club de Membresías · Agencia Cañaña · Santa Marta</div></footer>
+
+<script>
+/* Datos de ejemplo tomados de la demo del MVP (backend/Nucleo.js). Cada negocio los define en su Google Sheets. */
+const SERVICIOS=[["Corte caballero",15000],["Arreglo de barba",8000],["Corte + barba",20000],["Corte niño",12000],["Cejas",8000],["Corte dama",25000],["Tinte",50000],["Manicure",15000]];
+const PLANES=[
+ {n:"Sin membresía",p:0,t:0,b:0},
+ {n:"Membresía Personal",p:35000,t:15,b:10,cupos:1,txt:"15% en todos tus servicios · 1 familiar o amigo con 10% · Puntos y premios por visita"},
+ {n:"Membresía Familiar",p:60000,t:20,b:15,cupos:3,txt:"20% para ti · 3 familiares o amigos con 15% · Puntos por las visitas de todos"},
+ {n:"Membresía VIP",p:90000,t:25,b:20,cupos:4,txt:"25% para ti · 4 acompañantes con 20% sin límite · Prioridad en agenda · Bebida de cortesía"}
+];
+/* Contacto: rellena para mostrar el botón "Pedir una demostración". Si está vacío, no se muestra. */
+const CONTACTO={nombre:"",whatsapp:"",correo:""};
+
+const $=s=>document.querySelector(s), cop=n=>"$"+Math.round(n).toLocaleString("es-CO");
+const srv=$("#srv"),pln=$("#pln"),ben=$("#ben");
+SERVICIOS.forEach((s,i)=>srv.add(new Option(s[0]+" ("+cop(s[1])+")",i)));
+PLANES.forEach((p,i)=>pln.add(new Option(p.n,i)));
+pln.value=2;
+function calc(){
+  const s=SERVICIOS[srv.value],p=PLANES[pln.value];
+  const pct=p.p===0?0:(ben.checked?p.b:p.t);
+  const pagar=s[1]*(100-pct)/100;
+  $("#monto").textContent=cop(pagar);
+  $("#ahorro").textContent=pct?"Ahorra "+cop(s[1]-pagar)+" ("+pct+"%)":"Sin descuento";
+  $("#lista").textContent="Valor de lista: "+cop(s[1]);
+}
+[srv,pln,ben].forEach(e=>e.addEventListener("change",calc));calc();
+
+const tabs=document.querySelector(".tabs");
+PLANES.slice(1).forEach((p,i)=>{
+  const b=document.createElement("button");b.type="button";b.textContent=p.n.replace("Membresía ","");
+  b.setAttribute("aria-pressed",i===1);
+  b.onclick=()=>{[...tabs.children].forEach(x=>x.setAttribute("aria-pressed",x===b));plan(p)};
+  tabs.appendChild(b);
+});
+function plan(p){
+  $("#plan-det").innerHTML="<h3>"+p.n+" · "+cop(p.p)+" al mes</h3><p>"+p.txt+"</p><p class='nota' style='margin:0'>Hasta "+p.cupos+" familiar(es) o amigo(s) con cupo. Valores de ejemplo de la demo.</p>";
+}
+plan(PLANES[2]);
+
+/* Contacto opcional */
+if(CONTACTO.whatsapp||CONTACTO.correo){
+  const c=$("#contacto"),btn=$("#btn-contacto");c.hidden=false;btn.hidden=false;
+  const wa=CONTACTO.whatsapp.replace(/\D/g,"");
+  const msg=encodeURIComponent("Hola, quiero ver una demostración del Club de Membresías para mi negocio.");
+  c.innerHTML=(CONTACTO.nombre?"<p><strong>"+CONTACTO.nombre+"</strong></p>":"")+
+    (wa?"<p><a style='color:#fff' href='https://wa.me/"+wa+"?text="+msg+"'>Escríbenos por WhatsApp</a></p>":"")+
+    (CONTACTO.correo?"<p><a style='color:#fff' href='mailto:"+CONTACTO.correo+"'>"+CONTACTO.correo+"</a></p>":"");
+  btn.href=wa?"https://wa.me/"+wa+"?text="+msg:"mailto:"+CONTACTO.correo;
+}
+</script>
+</body>
+</html>
